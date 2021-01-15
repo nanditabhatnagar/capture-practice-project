@@ -6,7 +6,7 @@
 <body>
     {% for img in imageList %}
         <figure>
-            <img src="http://127.0.0.1:8000/static/small/{{barcode}}/{{img}}" alt="test capture image" style="width:10%"><br />
+            <img src="{{ url_for('static', path=img) }}" alt="{{img}}" style="width:10%"><br />
             <figcaption>Barcode: {{barcode}}</figcaption>
         </figure>
     {% endfor %}
