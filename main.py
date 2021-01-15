@@ -12,7 +12,11 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/barcodes/{barcode}", response_class=HTMLResponse)
 async def read_item(request: Request, barcode: str):
-    return templates.TemplateResponse("barcode.html", {"request": request, "barcode": barcode})
+    imageList = []
+    path = "./static/small/" + barcode
+    for img in os.listdir(path):
+        imageList.append(img)
+    return templates.TemplateResponse("barcode.html", {"request": request, "barcode" : barcode,"imageList": imageList})
 
 @app.get("/index/", response_class=HTMLResponse)
 async def read_item(request: Request):
