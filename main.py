@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+import os, sys
 
 app = FastAPI()
 
@@ -15,8 +16,10 @@ async def read_item(request: Request, barcode: str):
 
 @app.get("/index/", response_class=HTMLResponse)
 async def read_item(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
-
+    barcodeList = []
+    for x in os.listdir('./static/small'):
+        barcodeList.append(x)
+    return templates.TemplateResponse("index.html", {"request": request, "barcodeList": barcodeList})
 
 @app.get("/loop", response_class=HTMLResponse)
 async def loop(request: Request):

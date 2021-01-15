@@ -6,7 +6,12 @@
 </head>
 <body>
 
-    <a href="http://127.0.0.1:8000/static/small/93605861/3-93605861-18285487-993_.jpg">link</a>
-   
+    <p>Index of barcodes: </p>
+    {% for element in barcodeList %}
+        <a href="http://127.0.0.1:8000/barcodes/{{element}}">{{element}}<br /></a>
+    {% endfor %}
+
+    
+
 </body>
 </html>
