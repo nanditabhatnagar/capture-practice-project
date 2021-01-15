@@ -5,7 +5,10 @@
 </head>
 <body>
     {% for img in imageList %}
-        <img src="http://127.0.0.1:8000/static/small/{{barcode}}/{{img}}" alt="test capture image">
+        <figure>
+            <img src="http://127.0.0.1:8000/static/small/{{barcode}}/{{img}}" alt="test capture image" style="width:10%"><br />
+            <figcaption>Barcode: {{barcode}}</figcaption>
+        </figure>
     {% endfor %}
 </body>
 </html>
