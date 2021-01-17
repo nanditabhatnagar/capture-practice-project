@@ -4,10 +4,11 @@
     <title>Barcode Images</title>
 </head>
 <body>
-    {% for img in imageList %}
+    {% for (imgPath, name, size) in imageDetails %}
         <figure>
-            <img src="{{ url_for('static', path=img) }}" alt="{{img}}" style="width:10%"><br />
-            <figcaption>Barcode: {{barcode}}</figcaption>
+            <img src="{{ url_for('static', path=imgPath) }}" alt="{{imgPath}}" style="width:10%"><br />
+            <figcaption>Filename: {{name}}</figcaption> 
+            <figcaption>Size: {{size}}kB</figcaption>
         </figure>
     {% endfor %}
 </body>
