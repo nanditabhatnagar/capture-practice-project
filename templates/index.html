@@ -2,16 +2,28 @@
 <html>
 <head>
     <title>Barcode Images</title>
-   
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+</style>
 </head>
 <body>
-
     <p>Index of barcodes: </p>
-    {% for element in barcodeList %}
-        <a href="/barcodes/{{element}}">{{element}}<br /></a>
-    {% endfor %}
-
-    
-
+    <div class="grid-container">
+            {% for element in barcodeList %}                    
+                <div class="grid-item">   
+                    <a href="/barcodes/{{element}}">{{element}}<br /></a>
+                </div>
+            {% endfor %}
+    </div>
 </body>
 </html>
