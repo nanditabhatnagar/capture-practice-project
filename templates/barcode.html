@@ -2,13 +2,19 @@
 <html>
 <head>
     <title>Barcode Images</title>
+    <link href="{{ url_for('static', path='stylesBarcode.css') }}" rel="stylesheet">
 </head>
 <body>
-    {% for img in imageList %}
-        <figure>
-            <img src="{{ url_for('static', path=img) }}" alt="{{img}}" style="width:10%"><br />
-            <figcaption>Barcode: {{barcode}}</figcaption>
-        </figure>
-    {% endfor %}
+    <div class="grid-container">
+        {% for (imgPath, name, size) in imageDetails %}
+            <div class="grid-item">
+                <figure>
+                    <img src="{{ url_for('static', path=imgPath) }}" alt="{{imgPath}}" style="width:30%"><br />
+                    <figcaption>Filename: {{name}}</figcaption> 
+                    <figcaption>Size: {{size}}kB</figcaption>
+                </figure>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
