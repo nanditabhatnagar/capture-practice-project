@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Welcome page</title>
+    <title> Image Viewer</title>
     <link href="{{ url_for('static', path='stylesRoot.css') }}" rel="stylesheet">
         <style>
             #link { color: black; } 
             #link:hover { text-decoration: none; }
+            body {
+                padding: 10px 0px 0px 20px;
+            }
         </style>
 </head>
 <body>
-    <a href="/"><img src="{{ url_for('static', path='/resources/imagr-logo.png') }}" alt="imagr-logo" style="width:10%"><br /></a>
+    <a href="/"><img src="{{ url_for('static', path='/resources/Imagr-title.png') }}" alt="imagr-logo" style="width:12%"><br /></a>
     <h1><a id="link" href="/">Image Viewer<br /></a></h1>
     <h2><a href="/index">Click here to be taken to the index page!<br /></a></h2>
 </body>
