@@ -3,17 +3,20 @@
 <head>
     <title> Images: {{barcode}}</title>
     <link href="{{ url_for('static', path='stylesBarcode.css') }}" rel="stylesheet">
-    <style>
-        h1 {
-            text-align: left;
-            padding-top: 30px;
-            padding-bottom: 50px;
-        }
-    </style>
 </head>
 <body>
-    <div><a href="/"><img src="{{ url_for('static', path='/resources/Imagr-white-icon.png') }}" alt="imagr-logo" style="width:5%"  align="left"></a></div>
-    <h1>Barcode: {{barcode}}</h1>
+    <div style=
+    "display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: center;">
+        <div style="display: inline-block; vertical-align: center; align-content: center; padding: 20px;">
+            <a href="/"><img src="{{ url_for('static', path='/resources/Imagr-white-icon.png') }}" alt="imagr-logo" style="width:100%"></a>
+        </div>
+        <div style="display: inline-block; vertical-align: top;">
+            <h1>Barcode: {{barcode}}</h1>
+        </div>
+    </div>
     <div class="grid-container">
         {% for (imgPath, name, size) in imageDetails %}
             <div class="grid-item">
@@ -25,5 +28,6 @@
             </div>
         {% endfor %}
     </div>
+    <h2><a style="color: white;" href="/index">Go to Index</a></h2>
 </body>
 </html>
