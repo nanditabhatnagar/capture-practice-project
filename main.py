@@ -12,8 +12,8 @@ templates = Jinja2Templates(directory="templates")
 
 #root endpoint
 @app.get("/")
-async def read_main():
-    return {"Message": "Hello, World!"}
+async def read_item(request: Request):
+    return templates.TemplateResponse("root.html", {"request": request})
 
 @app.get("/barcodes/{barcode}", response_class=HTMLResponse)
 async def read_item(request: Request, barcode: str):
