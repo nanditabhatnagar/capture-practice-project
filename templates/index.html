@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Barcode Images</title>
+    <title>Index</title>
+    <link href="{{ url_for('static', path='stylesIndex.css') }}" rel="stylesheet">
+
 <style>
     .grid-container {
         display: grid;
@@ -16,7 +18,7 @@
 </style>
 </head>
 <body>
-    <p>Index of barcodes: </p>
+    <p><h1>Index of barcodes:</h1> </p>
     <div class="grid-container">
             {% for element in barcodeList %}                    
                 <div class="grid-item">   
