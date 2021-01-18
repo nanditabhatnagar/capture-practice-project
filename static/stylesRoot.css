@@ -1,20 +1,39 @@
 body {
-    background-color:#73318b;
-    color: white;
-    font-size: 15px;
-    font-family: sans-serif;
-    font-weight: normal;
+  background-color: white;
+  color: #73318b;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: normal;
+  align-content: center;
 }
 
+h1 {
+  color: black;
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  width: 100%;
+  font-size: 400%;
+}
+
+h2 {
+  color: #73318b;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
 
 a:link {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-  }
+  color: #73318b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active, a:visited {
+  color: #73318b;
+  text-decoration: underline;
+}

@@ -10,12 +10,13 @@
         {% for (imgPath, name, size) in imageDetails %}
             <div class="grid-item">
                 <figure>
-                    <img src="{{ url_for('static', path=imgPath) }}" alt="{{imgPath}}" style="width:30%"><br />
+                    <img class="capture" src="{{ url_for('static', path=imgPath) }}" alt="{{imgPath}}" style="width:30%"><br />
                     <figcaption>Filename: {{name}}</figcaption> 
                     <figcaption>Size: {{size}}kB</figcaption>
                 </figure>
             </div>
         {% endfor %}
     </div>
+    <img src="{{ url_for('static', path='/resources/imagr-logo-4.png') }}" alt="imagr-logo" style="width:10%"><br />
 </body>
 </html>
