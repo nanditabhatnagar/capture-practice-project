@@ -15,11 +15,16 @@
         align-items: center;
         text-align: center;
     }
+    h1 {
+        text-align: left;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 </style>
 </head>
 <body>
-    <a href="/"><img src="{{ url_for('static', path='/resources/imagr-logo-4.png') }}" alt="imagr-logo" style="width:10%">
-    <h1>Index of barcodes:</h1> </p></a>
+    <div><a href="/"><img src="{{ url_for('static', path='/resources/imagr-logo-4.png') }}" alt="imagr-logo" style="width:10%"  align="left"></a></div>
+    <h1>Index of barcodes</h1>
     <div class="grid-container">
             {% for element in barcodeList %}                    
                 <div class="grid-item">   
