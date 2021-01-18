@@ -3,10 +3,14 @@
 <head>
     <title> Welcome page</title>
     <link href="{{ url_for('static', path='stylesRoot.css') }}" rel="stylesheet">
+        <style>
+            #link { color: black; } 
+            #link:hover { text-decoration: none; }
+        </style>
 </head>
 <body>
-    <img src="{{ url_for('static', path='/resources/imagr-logo.png') }}" alt="imagr-logo" style="width:10%"><br />
-    <h1>Image Viewer</h1>
+    <a href="/"><img src="{{ url_for('static', path='/resources/imagr-logo.png') }}" alt="imagr-logo" style="width:10%"><br /></a>
+    <h1><a id="link" href="/">Image Viewer<br /></a></h1>
     <h2><a href="/index">Click here to be taken to the index page!<br /></a></h2>
 </body>
 </html>

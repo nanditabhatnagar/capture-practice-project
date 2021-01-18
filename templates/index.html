@@ -18,7 +18,8 @@
 </style>
 </head>
 <body>
-    <p><h1>Index of barcodes:</h1> </p>
+    <a href="/"><img src="{{ url_for('static', path='/resources/imagr-logo-4.png') }}" alt="imagr-logo" style="width:10%">
+    <h1>Index of barcodes:</h1> </p></a>
     <div class="grid-container">
             {% for element in barcodeList %}                    
                 <div class="grid-item">   
@@ -26,6 +27,5 @@
                 </div>
             {% endfor %}
     </div>
-    <img src="{{ url_for('static', path='/resources/imagr-logo-4.png') }}" alt="imagr-logo" style="width:10%"><br />
 </body>
 </html>
