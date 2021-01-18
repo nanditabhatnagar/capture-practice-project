@@ -10,6 +10,11 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
+#root endpoint
+@app.get("/")
+async def read_main():
+    return {"Message": "Hello, World!"}
+
 @app.get("/barcodes/{barcode}", response_class=HTMLResponse)
 async def read_item(request: Request, barcode: str):
     imagePath = []
