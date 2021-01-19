@@ -3,6 +3,7 @@
 <head>
     <title> Images: {{barcode}}</title>
     <link href="{{ url_for('static', path='stylesBarcode.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', path='barcodeScript.js') }}"></script>
 </head>
 <body>
     <div style=
@@ -16,6 +17,14 @@
         <div style="display: inline-block; vertical-align: top;">
             <h1>Barcode: {{barcode}}</h1>
         </div>
+        <div class="sort">
+            <button onclick="showTypes()" id="sortButton" class="sort-button">Sort By</button>
+            <div id="sortType" class="sort-type">
+                <button onclick="sortSelectOption(1)">option 1</button>
+                <button onclick="sortSelectOption(2)">option 2</button>
+                <button onclick="sortSelectOption(3)">option 3</button>
+            </div>
+        </div>
     </div>
     <div class="grid-container">
         {% for (imgPath, name, size) in imageDetails %}
@@ -28,6 +37,5 @@
             </div>
         {% endfor %}
     </div>
-    <h2><a style="color: white;" href="/index">Go to Index</a></h2>
 </body>
 </html>
