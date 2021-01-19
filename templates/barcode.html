@@ -17,14 +17,11 @@
         <div style="display: inline-block; vertical-align: top;">
             <h1>Barcode: {{barcode}}</h1>
         </div>
-        
-        
-        <div class="sort">
-            <button onclick="showTypes()" id="sortButton" class="sort-button">Sort By</button>
+        <div class="sort" style="padding-left: 20px;">
+            <button onclick="showTypes()" class="sort-button">Sort By</button>
             <div id="sortType" class="sort-type">
-                <button onclick="sortSelectOption(1)">option 1</button>
-                <button onclick="sortSelectOption(2)">option 2</button>
-                <button onclick="sortSelectOption(3)">option 3</button>
+                <a href="/barcodes/{{barcode}}?sort_type=filenames">Filenames</a><br/>
+                <a href="/barcodes/{{barcode}}?sort_type=sizes">Sizes</a>
             </div>
         </div>
     
@@ -35,8 +32,8 @@
             <div class="grid-item">
                 <figure>
                     <img class="capture" src="{{ url_for('static', path=imgPath) }}" alt="{{imgPath}}" style="width:30%"><br />
-                    <figcaption>Filename: {{name}}</figcaption> 
-                    <figcaption>Size: {{size}}kB</figcaption>
+                    <figcaption id="nameCap">Filename: {{name}}</figcaption> 
+                    <figcaption id="sizeCap">Size: {{size}}kB</figcaption>
                 </figure>
             </div>
         {% endfor %}

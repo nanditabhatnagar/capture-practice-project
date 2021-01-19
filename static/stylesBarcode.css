@@ -33,19 +33,18 @@ body {
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
+}
   
-  .sort-button:hover, .sort-button:focus {
+.sort-button:hover, .sort-button:focus {
     background-color: #2980B9;
-  }
-  
-  .sort {
-    position: right;
+}
+
+.sort {
+    position: relative;
     display: inline-block;
-    padding-inline-start: 50px;
-  }
+}
   
-  .sort-type {
+.sort-type {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -53,15 +52,15 @@ body {
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
-  
-  .sort-type a {
+}
+
+.sort-type a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  .sort a:hover {background-color: #ddd;}
-  
-  .show {display: block;}
+}
+
+.sort a:hover {background-color: #ddd;}
+
+.show {display: block;}
