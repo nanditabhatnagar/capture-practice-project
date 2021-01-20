@@ -29,19 +29,24 @@ async def read_item(request: Request, barcode: str, sort_type: Optional[str] = N
     imageName = []
     imageSize = []
     path = f"./static/small/{barcode}"
+    sortType = ""
     
     for img in os.listdir(path):
         imagePath.append(f"/small/{barcode}/{img}")
         imageName.append(img)
         imageSize.append(round(os.path.getsize(f"{path}/{img}")/1000, 1)) # converts to kB and rounds the file size to 1dp
+    
     imageDetails = zip(imagePath, imageName, imageSize)
     imageDetails = list(imageDetails)
-
     if sort_type == 'filenames':
         imageDetails = sort_files(imageDetails, 1)
+        sortType = "Filenames"
     elif sort_type == 'sizes':
         imageDetails = sort_files(imageDetails, 2)
-    return templates.TemplateResponse("barcode.html", {"request": request, "barcode" : barcode, "imageDetails": imageDetails})
+        sortType = "Sizes"
+    elif sort_type == 'None':
+        sortType = ""
+    return templates.TemplateResponse("barcode.html", {"request": request, "barcode" : barcode, "imageDetails": imageDetails, "sortType": sortType})
 
 @app.get("/index/", response_class=HTMLResponse)
 async def read_item(request: Request, sortingby: Optional[str] = None):
